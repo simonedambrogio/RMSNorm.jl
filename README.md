@@ -1,10 +1,10 @@
 # RMSNorm.jl
 
-A Julia implementation of Root Mean Square Layer Normalization (RMSNorm) as described in ["Root Mean Square Layer Normalization"](https://arxiv.org/abs/1910.07467) by Zhang and Sennrich (2019).
+A Lux.jl neural network layer implementing Root Mean Square Layer Normalization (RMSNorm) as described in ["Root Mean Square Layer Normalization"](https://arxiv.org/abs/1910.07467) by Zhang and Sennrich (2019).
 
 ## Overview
 
-RMSNorm is a simplified variant of Layer Normalization that only normalizes by the root mean square, without centering. This makes it computationally more efficient while maintaining similar performance to LayerNorm in many applications.
+RMSNorm is a simplified variant of Layer Normalization that only normalizes by the root mean square, without centering. This makes it computationally more efficient while maintaining similar performance to LayerNorm in many applications. This implementation is built as a layer for the [Lux.jl](https://github.com/LuxDL/Lux.jl) deep learning framework.
 
 The normalization is computed as:
 
@@ -26,6 +26,7 @@ Pkg.add("RMSNorm")
 ```julia
 using RMSNorm
 using Random
+using Lux
 
 # Create an RMSNorm layer
 rng = Random.default_rng()
@@ -54,8 +55,8 @@ RMSNorm(shape;
 
 ## Features
 
+- Full integration with the Lux.jl deep learning framework
 - Efficient implementation using Julia's broadcasting
-- Compatible with the Lux.jl neural network framework
 - Support for custom activation functions
 - Optional learnable scale parameter
 - Configurable normalization dimensions
