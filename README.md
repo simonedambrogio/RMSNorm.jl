@@ -30,7 +30,7 @@ using Lux
 
 # Create an RMSNorm layer
 rng = Random.default_rng()
-input_size = (768,)  # Feature dimension
+input_size = 768  # Feature dimension
 layer = RMSNorm(input_size)
 
 # Initialize parameters
@@ -75,10 +75,6 @@ If you use this package in your research, please cite:
   year={2019}
 }
 ```
-
-## License
-
-MIT License
 
 ## Contributing
 
